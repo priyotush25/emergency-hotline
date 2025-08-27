@@ -57,7 +57,7 @@
             <button
               class="btn flex items-center gap-3 px-8 py-6 rounded-full bg-[#41ff6b1a]"
             >
-              <p class="text-base font-black">0</p>
+              <p class="text-base font-black" id="heart">0</p>
               <img src="./assets/heart.png" alt="" class="w-7" />
             </button>
 
@@ -65,19 +65,21 @@
             <button
               class="btn flex items-center gap-3 px-8 py-6 rounded-full bg-[#41ff6b1a]"
             >
-              <p class="text-base font-black">0.00</p>
+              <p class="text-base font-black" id="coin">100</p>
               <img src="./assets/icon/coin.svg" alt="" class="w-6" />
             </button>
 
             <!-- button 3 -->
             <button
+              id="copy-btn"
               class="btn flex items-center gap-3 px-8 py-6 rounded-full bg-[#00A63E]"
             >
-              <p class="text-base font-black text-white">0</p>
+              <p class="text-base font-black text-white" id="copy-count">0</p>
               <p class="text-base font-black text-white">Copy</p>
             </button>
           </div>
 
+          <!-- dropdown section -->
           <div class="dropdown dropdown-end md:hidden">
             <div tabindex="0" role="button" class="btn rounded-field">
               <i class="fa-solid fa-bars text-2xl py-2"></i>
@@ -139,7 +141,9 @@
         <div class="md:w-7/10">
           <div class="grid md:grid-cols-3 gap-7 md:p-0 p-5">
             <!-- card-1 -->
-            <div class="p-8 rounded-xl bg-white flex flex-col gap-6 shadow-lg">
+            <div
+              class="card p-8 rounded-xl bg-white flex flex-col gap-6 shadow-lg"
+            >
               <div class="flex items-center justify-between">
                 <img
                   src="./assets/emergency.png"
@@ -165,7 +169,7 @@
                 </p>
               </div>
               <div class="flex gap-2">
-                <button class="btn flex-1 p-4 text-[#5C5C5C] card-btn">
+                <button class="btn flex-1 p-4 text-[#5C5C5C]">
                   <img src="./assets/icon/copy.svg" alt="" /> Copy
                 </button>
                 <button class="btn flex-1 bg-[#00A63E] text-white p-4">
@@ -174,8 +178,10 @@
               </div>
             </div>
 
-            <!-- card-1 -->
-            <div class="p-8 rounded-xl bg-white flex flex-col gap-6 shadow-lg">
+            <!-- card-2 -->
+            <div
+              class="card p-8 rounded-xl bg-white flex flex-col gap-6 shadow-lg"
+            >
               <div class="flex items-center justify-between">
                 <img
                   src="./assets/emergency.png"
@@ -201,7 +207,7 @@
                 </p>
               </div>
               <div class="flex gap-2">
-                <button class="btn flex-1 p-4 text-[#5C5C5C] card-btn">
+                <button class="btn flex-1 p-4 text-[#5C5C5C]">
                   <img src="./assets/icon/copy.svg" alt="" /> Copy
                 </button>
                 <button class="btn flex-1 bg-[#00A63E] text-white p-4">
@@ -210,8 +216,10 @@
               </div>
             </div>
 
-            <!-- card-1 -->
-            <div class="p-8 rounded-xl bg-white flex flex-col gap-6 shadow-lg">
+            <!-- card-3-->
+            <div
+              class="card p-8 rounded-xl bg-white flex flex-col gap-6 shadow-lg"
+            >
               <div class="flex items-center justify-between">
                 <img
                   src="./assets/emergency.png"
@@ -237,7 +245,7 @@
                 </p>
               </div>
               <div class="flex gap-2">
-                <button class="btn flex-1 p-4 text-[#5C5C5C] card-btn">
+                <button class="btn flex-1 p-4 text-[#5C5C5C]">
                   <img src="./assets/icon/copy.svg" alt="" /> Copy
                 </button>
                 <button class="btn flex-1 bg-[#00A63E] text-white p-4">
@@ -256,21 +264,16 @@
               <i class="fa-regular fa-clock text-[#5C5C5C]"></i> Call History
             </div>
             <button
+              id="clear"
               class="btn flex items-center gap-3 px-6 py-6 rounded-full bg-[#00A63E] text-white"
             >
               Clear
             </button>
           </div>
 
-          <div
-            class="bg-[#FAFAFA] p-4 rounded-xl flex items-center justify-between mt-4"
-          >
-            <div>
-              <h4 class="text-lg font-normal">title</h4>
-              <h4 class="text-[#5C5C5C] text-lg font-normal mt-2">999</h4>
-            </div>
-            <div class="text-lg font-normal"><p>date</p></div>
-          </div>
+          <div id="card-container"></div>
+
+          <!-- here card show -->
         </div>
       </section>
     </main>
