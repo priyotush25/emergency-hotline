@@ -1,19 +1,16 @@
+//utility function
 function getElement(id) {
   return document.getElementById(id);
 }
 
-// get heart
+//  Initial heart and coin values
 let heartNum = Number(getElement("heart").innerText);
-
-// get coin
 let coin = Number(getElement("coin").innerText);
 
-// get card button
+// Select all cards
 let cards = document.getElementsByClassName("card");
 
-// card history
-// let cardHistory = [];
-
+// Array to store all copied text
 let storedTexts = [];
 
 // all operation here
@@ -25,14 +22,14 @@ for (let card of cards) {
   let title = card.childNodes[3].childNodes[1];
   let num = card.childNodes[5].childNodes[1];
 
-  // heart button
+  // Heart button: increment heart count
   heart.addEventListener("click", function () {
     heartNum++;
 
     getElement("heart").innerText = heartNum;
   });
 
-  // call button
+  // Call button: deduct coins and show alert
   call.addEventListener("click", function () {
     if (coin === 0) {
       alert("not available coin");
@@ -64,12 +61,12 @@ for (let card of cards) {
     getElement("card-container").appendChild(div);
   });
 
-  // copy text section
+  // Copy button: copy individual card number
   copy.addEventListener("click", function () {
     let text = num.innerText;
 
     navigator.clipboard.writeText(text).then(function () {
-      alert("copied ", text);
+      alert("Copied  " + text);
 
       storedTexts.push(text);
       getElement("copy-count").innerText++;
@@ -82,16 +79,16 @@ getElement("clear").addEventListener("click", function () {
   getElement("card-container").innerHTML = "";
 });
 
-// copy count
+// Copy All Stored Text button functionality
 getElement("copy-btn").addEventListener("click", function () {
   if (storedTexts.length === 0) {
-    alert("not text copied");
+    alert("Not text Copied");
     return;
   }
 
   let finalText = storedTexts.join("\n");
 
   navigator.clipboard.writeText(finalText).then(function () {
-    alert("All Copied:\n\n" + finalText);
+    alert("All Copied:\n" + finalText);
   });
 });
