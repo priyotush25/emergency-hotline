@@ -20,7 +20,10 @@ for (let card of cards) {
   let heart = card.childNodes[1].childNodes[3];
 
   let title = card.childNodes[3].childNodes[1];
+  let title2 = card.childNodes[3].childNodes[3];
   let num = card.childNodes[5].childNodes[1];
+
+  console.log(title2);
 
   // Heart button: increment heart count
   heart.addEventListener("click", function () {
@@ -32,11 +35,11 @@ for (let card of cards) {
   // Call button: deduct coins and show alert
   call.addEventListener("click", function () {
     if (coin === 0) {
-      alert("not available coin");
+      alert("✕ আপনার পর্যাপ্ত কয়েন নেই!  কল করতে কম পক্ষে ২০ কয়েন লাগবে।");
       return;
     }
 
-    alert(`${title.innerText} ${num.innerText}`);
+    alert(`${title2.innerText} ${num.innerText}`);
 
     coin -= 20;
 
