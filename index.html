@@ -80,44 +80,14 @@
           </div>
 
           <!-- dropdown section -->
-          <div class="dropdown dropdown-end md:hidden">
-            <div tabindex="0" role="button" class="btn rounded-field">
-              <i class="fa-solid fa-bars text-2xl py-2"></i>
-            </div>
-            <!-- button -->
-            <ul
-              tabindex="0"
-              class="menu dropdown-content bg-white rounded-box z-1 mt-4 w-fit p-2 shadow-sm gap-2"
-            >
-              <li>
-                <!-- button 1 -->
-                <button
-                  class="btn flex items-center gap-3 px-6 py-6 rounded-full bg-[#41ff6b1a]"
-                >
-                  <p class="text-base font-black">0</p>
-                  <img src="./assets/heart.png" alt="" class="w-7" />
-                </button>
-              </li>
-              <li>
-                <!-- button 2 -->
-                <button
-                  class="btn flex items-center gap-3 px-8 py-6 rounded-full bg-[#41ff6b1a]"
-                >
-                  <p class="text-base font-black">0</p>
-                  <img src="./assets/icon/coin.svg" alt="" class="w-7" />
-                </button>
-              </li>
-              <li>
-                <!-- button 3 -->
-                <button
-                  class="btn flex items-center gap-3 px-8 py-6 rounded-full bg-[#00A63E]"
-                >
-                  <p class="text-base font-black text-white">0</p>
-                  <p class="text-base font-black text-white">Copy</p>
-                </button>
-              </li>
-            </ul>
-          </div>
+
+          <button
+            id="coin-btn-mobile"
+            class="md:hidden btn flex items-center gap-3 px-8 py-6 rounded-full bg-[#41ff6b1a]"
+          >
+            <p class="text-base font-black" id="coin-mobile">100</p>
+            <img src="./assets/icon/coin.svg" alt="" class="w-6" />
+          </button>
         </div>
       </div>
     </header>

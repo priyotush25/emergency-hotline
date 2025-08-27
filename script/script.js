@@ -6,6 +6,7 @@ function getElement(id) {
 //  Initial heart and coin values
 let heartNum = Number(getElement("heart").innerText);
 let coin = Number(getElement("coin").innerText);
+let coinMobile = Number(getElement("coin-mobile").innerText);
 
 // Select all cards
 let cards = document.getElementsByClassName("card");
@@ -23,8 +24,6 @@ for (let card of cards) {
   let title2 = card.childNodes[3].childNodes[3];
   let num = card.childNodes[5].childNodes[1];
 
-  console.log(title2);
-
   // Heart button: increment heart count
   heart.addEventListener("click", function () {
     heartNum++;
@@ -34,7 +33,7 @@ for (let card of cards) {
 
   // Call button: deduct coins and show alert
   call.addEventListener("click", function () {
-    if (coin === 0) {
+    if (coin === 0 || coinMobile === 0) {
       alert("✕ আপনার পর্যাপ্ত কয়েন নেই!  কল করতে কম পক্ষে ২০ কয়েন লাগবে।");
       return;
     }
@@ -42,8 +41,10 @@ for (let card of cards) {
     alert(`${title2.innerText} ${num.innerText}`);
 
     coin -= 20;
+    coinMobile -= 20;
 
     getElement("coin").innerText = coin;
+    getElement("coin-mobile").innerText = coinMobile;
 
     // date find
     let date = new Date().toLocaleTimeString();
