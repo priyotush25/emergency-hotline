@@ -12,7 +12,9 @@ let coin = Number(getElement("coin").innerText);
 let cards = document.getElementsByClassName("card");
 
 // card history
-let cardHistory = [];
+// let cardHistory = [];
+
+let storedTexts = [];
 
 // all operation here
 for (let card of cards) {
@@ -61,6 +63,18 @@ for (let card of cards) {
 
     getElement("card-container").appendChild(div);
   });
+
+  // copy text section
+  copy.addEventListener("click", function () {
+    let text = num.innerText;
+
+    navigator.clipboard.writeText(text).then(function () {
+      alert("copied ", text);
+
+      storedTexts.push(text);
+      getElement("copy-count").innerText++;
+    });
+  });
 }
 
 // clear history
@@ -70,5 +84,14 @@ getElement("clear").addEventListener("click", function () {
 
 // copy count
 getElement("copy-btn").addEventListener("click", function () {
-  getElement("copy-count").innerText++;
+  if (storedTexts.length === 0) {
+    alert("not text copied");
+    return;
+  }
+
+  let finalText = storedTexts.join("\n");
+
+  navigator.clipboard.writeText(finalText).then(function () {
+    alert("All Copied:\n\n" + finalText);
+  });
 });
